@@ -1,0 +1,9 @@
+C:\Users\alex\source\repos\Phasmophobia Save Manager\bin\Release\Phasmophobia Save Manager.exe.config
+C:\Users\alex\source\repos\Phasmophobia Save Manager\bin\Release\Phasmophobia Save Manager.exe
+C:\Users\alex\source\repos\Phasmophobia Save Manager\bin\Release\Phasmophobia Save Manager.pdb
+C:\Users\alex\source\repos\Phasmophobia Save Manager\obj\Release\Phasmophobia_Save_Manager.Main.resources
+C:\Users\alex\source\repos\Phasmophobia Save Manager\obj\Release\Phasmophobia_Save_Manager.Properties.Resources.resources
+C:\Users\alex\source\repos\Phasmophobia Save Manager\obj\Release\Phasmophobia Save Manager.csproj.GenerateResource.cache
+C:\Users\alex\source\repos\Phasmophobia Save Manager\obj\Release\Phasmophobia Save Manager.csproj.CoreCompileInputs.cache
+C:\Users\alex\source\repos\Phasmophobia Save Manager\obj\Release\Phasmophobia Save Manager.exe
+C:\Users\alex\source\repos\Phasmophobia Save Manager\obj\Release\Phasmophobia Save Manager.pdb
