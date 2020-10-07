@@ -37,8 +37,8 @@ namespace Phasmophobia_Save_Manager
         {
             
             btStart.Enabled = false;
-            singleton.saveFileManager.PerformSaveFileCheck(); // Immediately backup save file
             singleton.saveFileManager.MonitorSaveFile(); // Monitor for changes
+            singleton.saveFileManager.PerformSaveFileCheck(); // Immediately backup save file
             btStop.Enabled = true;
         }
 
