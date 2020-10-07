@@ -8,3 +8,6 @@ C:\Users\alex\source\repos\Phasmophobia Save Manager\obj\Release\Phasmophobia Sa
 C:\Users\alex\source\repos\Phasmophobia Save Manager\obj\Release\Phasmophobia Save Manager.exe
 C:\Users\alex\source\repos\Phasmophobia Save Manager\obj\Release\Phasmophobia Save Manager.pdb
 C:\Users\alex\source\repos\Phasmophobia Save Manager\obj\Release\Phasmophobia Save Manager.csprojAssemblyReference.cache
+C:\Users\alex\source\repos\Phasmophobia Save Manager\bin\Release\Newtonsoft.Json.dll
+C:\Users\alex\source\repos\Phasmophobia Save Manager\bin\Release\Newtonsoft.Json.xml
+C:\Users\alex\source\repos\Phasmophobia Save Manager\obj\Release\Phasmophobia Save Manager.csproj.CopyComplete

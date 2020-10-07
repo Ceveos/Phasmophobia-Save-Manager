@@ -40,8 +40,8 @@ namespace Phasmophobia_Save_Manager.FileManager
             if (IsSaveFileCorrupt())
             {
                 OnSaveFileEvent(this, "Save file is corrupt!");
-                //StopMonitoringSaveFile(); 
-                //MessageBox.Show("Save file corrupt", "Save file is found to be corrupted! Backing up will stop");
+                StopMonitoringSaveFile(); 
+                MessageBox.Show("Save file corrupt", "Save file is found to be corrupted! Backing up will stop");
             } else
             {
                 OnSaveFileEvent(this, "Save file is good, backing up");
