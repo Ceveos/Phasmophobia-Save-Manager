@@ -8,7 +8,10 @@ namespace Phasmophobia_Save_Manager
 {
     public static class Constants
     {
-        public static readonly string SaveDirectory = @"%USERPROFILE%\AppData\LocalLow\Kinetic Games\Phasmophobia";
-        public static readonly string SaveFileName = @"saveData.txt";
+        public const string SaveDirectory = @"%USERPROFILE%\AppData\LocalLow\Kinetic Games\Phasmophobia";
+        public const string SaveFileName = @"saveData.txt";
+        public const string BackupFileName = @"Phasmophobia-Backup.dat";
+        public const string TempFileName = @"Temp.dat";
+        public const string SaveFilePassword = "CHANGE ME TO YOUR OWN RANDOM STRING";
     }
 }

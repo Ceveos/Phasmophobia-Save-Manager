@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +23,9 @@ namespace Phasmophobia_Save_Manager
 
         private void SaveFileManager_OnSaveFileEvent(object sender, string newStatus)
         {
-            if (lbStatus.InvokeRequired)
-            {
-                lbStatus.BeginInvoke((MethodInvoker)delegate () { lbStatus.Text = newStatus; });
-            }
-            else
-            {
-                lbStatus.Text = newStatus;
-            }
+            UpdateStatus(newStatus);
+            btStart.Enabled = !singleton.saveFileManager.isMonitoring;
+            btStop.Enabled = singleton.saveFileManager.isMonitoring;
         }
 
         private void btOpenSaveDirectory_Click(object sender, EventArgs e)
@@ -39,8 +35,9 @@ namespace Phasmophobia_Save_Manager
 
         private void btStart_Click(object sender, EventArgs e)
         {
+            
             btStart.Enabled = false;
-            singleton.saveFileManager.BackupSaveFile(); // Immediately backup save file
+            singleton.saveFileManager.PerformSaveFileCheck(); // Immediately backup save file
             singleton.saveFileManager.MonitorSaveFile(); // Monitor for changes
             btStop.Enabled = true;
         }
@@ -50,6 +47,22 @@ namespace Phasmophobia_Save_Manager
             btStop.Enabled = false;
             singleton.saveFileManager.StopMonitoringSaveFile();
             btStart.Enabled = true;
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void UpdateStatus(string status)
+        {
+            if (lbStatus.InvokeRequired)
+            {
+                lbStatus.BeginInvoke((MethodInvoker)delegate () { lbStatus.Text = status; });
+            }
+            else
+            {
+                lbStatus.Text = status;
+            }
         }
     }
 }

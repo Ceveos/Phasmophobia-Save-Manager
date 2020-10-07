@@ -90,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 191);
+            this.ClientSize = new System.Drawing.Size(385, 185);
             this.Controls.Add(this.btOpenSaveDirectory);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btStop);
@@ -99,6 +99,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phasmophobia Save Manager";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
