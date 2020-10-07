@@ -31,13 +31,26 @@ namespace Phasmophobia_Save_Manager.FileManager
 
         private void onSaveFileChanged(object sender, FileSystemEventArgs e)
         {
+            // Wait 1 second to allow the game to save
+            System.Threading.Thread.Sleep(1000);
             PerformSaveFileCheck();
         }
 
         public void PerformSaveFileCheck()
         {
+            if (!SaveFileExists())
+            {
+                OnSaveFileEvent(this, "Save file doesn't exist. Waiting");
+                return;
+            }
+
             GetSaveFileJson();
-            if (IsSaveFileCorrupt())
+            if (saveFileData == null)
+            {
+                OnSaveFileEvent(this, "Save file doesn't exist. Waiting");
+                return;
+            }
+            else if (IsSaveFileCorrupt())
             {
                 OnSaveFileEvent(this, "Save file is corrupt!");
                 StopMonitoringSaveFile(); 
@@ -47,6 +60,12 @@ namespace Phasmophobia_Save_Manager.FileManager
                 OnSaveFileEvent(this, "Save file is good, backing up");
                 BackupSaveFile();
             }
+        }
+
+        public bool SaveFileExists()
+        {
+            string saveFilePath = Path.Combine(Environment.ExpandEnvironmentVariables(Constants.SaveDirectory), Constants.SaveFileName);
+            return File.Exists(saveFilePath);
         }
 
         public dynamic GetSaveFileJson()
@@ -65,18 +84,12 @@ namespace Phasmophobia_Save_Manager.FileManager
                     text.Append((char)(data[i] ^ Constants.SaveFilePassword[i % Constants.SaveFilePassword.Length]));
                 }
 
-                try
-                {
-                    saveFileData = JObject.Parse(text.ToString());
-                }
-                catch (Exception)
-                {
-                    saveFileData = null;
-                }
+                saveFileData = JObject.Parse(text.ToString());
                 return saveFileData;
             } catch (Exception)
             {
                 OnSaveFileEvent(this, "Error reading save file");
+                saveFileData = null;
                 return null;
             }
         }
